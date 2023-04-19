@@ -385,6 +385,25 @@
             </a>
           </div>
         </div>
+        <div class="newsletter">
+          <h3 class="newsletter-header">Zapisz się do newslettera</h3>
+          <form class="newsletter-form">
+            <label>
+              <input
+                type="text"
+                name="newsletter-email"
+                placeholder="E-mail"
+                class="newsletter-field"
+              />
+              <button type="button" class="button button-form">
+                <span>Zapisz się</span>
+                <svg width="18" height="18" class="icons">
+                  <use href="./images/icons.svg#icon-send"></use>
+                </svg>
+              </button>
+            </label>
+          </form>
+        </div>
       </div>
     </footer>
 
@@ -393,6 +412,57 @@
         <button type="button" class="button close-button" data-modal-close>
           X
         </button>
+        <form name="order_form" autocomplete="on" class="form">
+          <p class="modal-header">Zostaw swoje dane w formularzu poniżej</p>
+          <div class="modal-text-fields">
+            <!-- Name form -->
+            <label for="name" class="label-header">Imię</label>
+            <div class="icon-field">
+              <input type="text" name="name" id="name" class="field" />
+              <svg width="18" height="18" class="icons icon-person">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+            <!-- Phone form -->
+            <label for="phone" class="label-header">Telefon</label>
+            <div class="icon-field">
+              <input type="tel" name="phone" id="phone" class="field" />
+              <svg width="18" height="18" class="icons">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+            <!-- E-mail form -->
+            <label for="email" class="label-header">Email</label>
+            <div class="icon-field">
+              <input type="email" name="email" id="email" class="field" />
+              <svg width="18" height="18" class="icons">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+            <!-- Comment form -->
+            <label for="comment" class="label-header">Komentarz</label>
+            <div class="icon-field">
+              <textarea
+                name="comment"
+                rows="5"
+                id="comment"
+                placeholder="Wprowadź tekst"
+                class="field field-area"
+              ></textarea>
+            </div>
+          </div>
+          <!-- Terms form -->
+          <label class="label-terms">
+            <input
+              type="checkbox"
+              name="terms-accept"
+              value="accept"
+              class="form-check"
+            />Oświadczam iż akceptuję <a href="">Regulamin</a> i
+            <a href="">Politykę Prywatności</a>.
+          </label>
+          <button type="submit" class="button button-form">Wyślij</button>
+        </form>
       </div>
     </div>
 

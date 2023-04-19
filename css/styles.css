@@ -168,9 +168,50 @@ figure {
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+.newsletter-header {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.newsletter-field {
+  box-sizing: border-box;
+  width: 358px;
+  height: 50px;
+  padding: 15px 16px;
+  margin-right: 12px;
+  color: rgba(255, 255, 255, 0.6);
+
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.newsletter-form .button-form {
+  box-sizing: border-box;
+  width: 200px;
+  height: 50px;
+  line-height: 1.875;
+
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
 }
 
 /* LINKS */
@@ -326,7 +367,6 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 
   position: absolute;
   bottom: 0;
@@ -468,6 +508,7 @@ figure {
   justify-content: center;
 
   position: relative;
+  overflow: hidden;
 
   /* transition */
 
@@ -520,6 +561,10 @@ figure {
   padding-bottom: 30px;
   justify-content: center;
   align-items: center;
+}
+
+.footer-socials .social-icons {
+  padding-top: 20px;
 }
 
 /* every icon will have correct color 
@@ -592,6 +637,18 @@ and background as a circle */
   background-color: var(--functional-color);
 }
 
+/* icons in MODAL WINDOW */
+
+.icon-field {
+  position: relative;
+}
+
+.modal .icons {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+}
+
 /* MODAL WINDOW */
 /* MODAL WINDOW */
 /* MODAL WINDOW */
@@ -619,8 +676,10 @@ and background as a circle */
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
+  rotate: -360deg;
+
   /* animation for window to show up */
-  transition-property: opacity, scale;
+  transition-property: opacity, scale, rotate;
   transition-delay: 50ms;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
@@ -629,7 +688,12 @@ and background as a circle */
 .is-hidden .modal {
   /* animation for window to hide */
   scale: 0;
-  transition: scale 1000ms ease-in-out 50ms;
+  rotate: 360deg;
+
+  transition-property: scale, rotate;
+  transition-delay: 50ms;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 }
 
 .is-hidden {
@@ -646,12 +710,139 @@ and background as a circle */
 
 .close-button {
   position: relative;
-  left: calc(100% - 30px);
+  left: calc(100% - 38px);
+  top: 8px;
   width: 30px;
   height: 30px;
   background-color: var(--white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  padding: 0;
+}
+
+.form {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: calc(100% - 40px);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+
+  padding: 40px;
+  padding-top: 0;
+}
+
+.modal-header {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.modal-text-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.label-header {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: #757575;
+}
+
+.field {
+  display: block;
+  box-sizing: border-box;
+  height: 40px;
+  outline: none;
+  padding: 11px 0;
+  padding-left: 42px;
+  margin-bottom: 10px;
+  width: 100%;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  color: var(--black-color);
+}
+
+.field-area {
+  box-sizing: border-box;
+  height: 120px;
+  padding: 12px 16px;
+  resize: none;
+}
+
+.field:focus-within,
+.field:focus-within + .icons {
+  border-color: var(--functional-color);
+  fill: #2196f3;
+}
+
+.field-area::placeholder {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.label-terms {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+  margin-bottom: 30px;
+}
+
+.form-check {
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+}
+
+.label-terms a,
+.label-terms a:visited {
+  color: var(--functional-color);
+}
+
+.button-form {
+  width: 200px;
+  height: 50px;
+  background: var(--functional-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--white-color);
+
+  transition-property: color, background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-form:hover,
+.button-form:focus {
+  background: var(--white-color);
+  color: var(--functional-color);
 }
 
 /* PORTFOLIO CARD DESCRIPTION */
@@ -659,7 +850,6 @@ and background as a circle */
 /* PORTFOLIO CARD DESCRIPTION */
 
 .portfolio-image-description {
-  visibility: hidden;
   display: flex;
   align-items: center;
   z-index: 1;
@@ -668,27 +858,27 @@ and background as a circle */
   height: 294px;
   padding-left: 24px;
   padding-right: 45px;
-
   background-color: rgba(33, 150, 243, 0.9);
   color: var(--white-color);
 
   position: absolute;
-  top: 294px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   font-style: normal;
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0.03em;
 
-  animation: portfolio-cards-backwards 250ms cubic-bezier(0.4, 0, 0.2, 1)
-    forwards;
+  /* animation */
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-block .link:hover .portfolio-image-description {
-  animation-name: portfolio-cards-forwards;
-  animation-duration: 250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  animation-fill-mode: forwards;
+  transform: translateY(0);
 }
 
 /* CURRENT PAGE MARKUP */
@@ -718,7 +908,7 @@ and background as a circle */
 /* ANIMATIONS */
 /* ANIMATIONS */
 
-@keyframes portfolio-cards-forwards {
+/* @keyframes portfolio-cards-forwards {
   0% {
     visibility: hidden;
     opacity: 0;
@@ -738,14 +928,12 @@ and background as a circle */
   0% {
     visibility: visible;
     opacity: 1;
-    height: 294px;
     transform: translateY(-294px);
   }
 
   100% {
     visibility: hidden;
     opacity: 0;
-    height: 0;
     transform: translateY(0);
   }
-}
+} */
