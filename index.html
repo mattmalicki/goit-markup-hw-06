@@ -395,7 +395,7 @@
                 placeholder="E-mail"
                 class="newsletter-field"
               />
-              <button type="button" class="button button-form">
+              <button type="submit" class="button button-form">
                 <span>Zapisz się</span>
                 <svg width="18" height="18" class="icons">
                   <use href="./images/icons.svg#icon-send"></use>
@@ -418,7 +418,7 @@
             <!-- Name form -->
             <label for="name" class="label-header">Imię</label>
             <div class="icon-field">
-              <input type="text" name="name" id="name" class="field" />
+              <input type="text" name="client-name" id="name" class="field" />
               <svg width="18" height="18" class="icons icon-person">
                 <use href="./images/icons.svg#icon-person"></use>
               </svg>
@@ -426,7 +426,7 @@
             <!-- Phone form -->
             <label for="phone" class="label-header">Telefon</label>
             <div class="icon-field">
-              <input type="tel" name="phone" id="phone" class="field" />
+              <input type="tel" name="client-phone" id="phone" class="field" />
               <svg width="18" height="18" class="icons">
                 <use href="./images/icons.svg#icon-phone"></use>
               </svg>
@@ -434,7 +434,12 @@
             <!-- E-mail form -->
             <label for="email" class="label-header">Email</label>
             <div class="icon-field">
-              <input type="email" name="email" id="email" class="field" />
+              <input
+                type="client-email"
+                name="email"
+                id="email"
+                class="field"
+              />
               <svg width="18" height="18" class="icons">
                 <use href="./images/icons.svg#icon-email"></use>
               </svg>
@@ -443,7 +448,7 @@
             <label for="comment" class="label-header">Komentarz</label>
             <div class="icon-field">
               <textarea
-                name="comment"
+                name="client-comment"
                 rows="5"
                 id="comment"
                 placeholder="Wprowadź tekst"
@@ -452,15 +457,28 @@
             </div>
           </div>
           <!-- Terms form -->
-          <label class="label-terms">
+          <div class="check-form">
             <input
+              id="terms"
               type="checkbox"
-              name="terms-accept"
-              value="accept"
-              class="form-check"
-            />Oświadczam iż akceptuję <a href="">Regulamin</a> i
-            <a href="">Politykę Prywatności</a>.
-          </label>
+              name="client-terms-accept"
+              value="terms-accept"
+              class="form-checkbox"
+            />
+            <!-- icon check -->
+            <svg width="16" height="15" class="icon-check">
+              <use href="./images/icons.svg#icon-check"></use>
+            </svg>
+            <!-- icon uncheck -->
+            <svg width="16" height="15" class="icon-uncheck">
+              <use href="./images/icons.svg#icon-uncheck"></use>
+            </svg>
+            <label for="terms" class="label-terms">
+              Oświadczam iż akceptuję&nbsp;
+              <a href="">Regulamin</a>&nbsp;i&nbsp;
+              <a href="">Politykę Prywatności</a>.
+            </label>
+          </div>
           <button type="submit" class="button button-form">Wyślij</button>
         </form>
       </div>

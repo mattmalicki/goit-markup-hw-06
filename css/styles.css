@@ -212,6 +212,12 @@ figure {
   align-items: center;
   justify-content: center;
   gap: 24px;
+  padding: 10px 42px;
+  padding-right: 28px;
+
+  transition-property: color, background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* LINKS */
@@ -656,6 +662,7 @@ and background as a circle */
 .backdrop {
   display: flex;
   position: fixed;
+  opacity: 1;
   left: 0;
   top: 0;
   right: 0;
@@ -663,6 +670,12 @@ and background as a circle */
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
+
+  /* animation */
+  transition-property: opacity;
+  transition-delay: 50ms;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
 }
 
 .modal {
@@ -676,10 +689,8 @@ and background as a circle */
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  rotate: -360deg;
-
   /* animation for window to show up */
-  transition-property: opacity, scale, rotate;
+  transition-property: opacity, scale;
   transition-delay: 50ms;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
@@ -688,9 +699,8 @@ and background as a circle */
 .is-hidden .modal {
   /* animation for window to hide */
   scale: 0;
-  rotate: 360deg;
 
-  transition-property: scale, rotate;
+  transition-property: scale;
   transition-delay: 50ms;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
@@ -784,6 +794,7 @@ and background as a circle */
   height: 120px;
   padding: 12px 16px;
   resize: none;
+  font-size: 12px;
 }
 
 .field:focus-within,
@@ -800,23 +811,60 @@ and background as a circle */
   color: rgba(117, 117, 117, 0.5);
 }
 
+.check-form {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
 .label-terms {
+  position: relative;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: #757575;
-  margin-bottom: 30px;
+  padding-left: 23px;
 }
 
-.form-check {
-  margin-right: 8px;
-  width: 16px;
-  height: 15px;
+.form-checkbox {
+  display: none;
 }
 
 .label-terms a,
 .label-terms a:visited {
   color: var(--functional-color);
+}
+
+.icon-uncheck,
+.icon-check {
+  position: absolute;
+}
+
+.icon-uncheck {
+  opacity: 1;
+
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-check {
+  /* check icon isn't visible when unchecked */
+  opacity: 0;
+
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.check-form input[type="checkbox"]:checked + svg + svg {
+  /* making unchecked icon hidden when checkbox is checked */
+  opacity: 0;
+}
+
+.check-form input[type="checkbox"]:checked + svg {
+  /* making checked icon visible when checkbox is checked */
+  opacity: 1;
 }
 
 .button-form {
