@@ -787,6 +787,11 @@ and background as a circle */
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   color: var(--black-color);
+
+  /* animations */
+  transition-property: border-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .field-area {
@@ -801,6 +806,11 @@ and background as a circle */
 .field:focus-within + .icons {
   border-color: var(--functional-color);
   fill: #2196f3;
+
+  /* animation */
+  transition-property: border-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .field-area::placeholder {
